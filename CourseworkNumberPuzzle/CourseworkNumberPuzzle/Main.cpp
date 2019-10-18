@@ -2,10 +2,12 @@
 //By Aaron Robson
 #include <iostream>
 #include<string>
+#include "Main.h"
+#include "Interface.h"
+
 
 using namespace std;
 
-string Uname;
 int userValue = 10;
 int nums[4][4];
 
@@ -15,6 +17,7 @@ void AddNumbersToArray()
 	cin >> userValue;
 
 }
+
 void PrintArray()
 {
 	for (int column = 0; column < 4; column++)   //print out the column and row (their location)
@@ -27,6 +30,7 @@ void PrintArray()
 	}
 
 }
+
 void IntroText()
 {
 	string title = "";
@@ -48,12 +52,10 @@ void IntroText()
 
 int main()
 {
+	Interface ui;
 	IntroText();
-   
-	cout << "Please enter your name: ";
-	cin >> Uname;
-	cout << "Hello " << Uname << endl;
-
+	ui.out();
+ 
 
 	for (int column = 0; column < 4; column++)     //Iterate from the column and then the row, setting the values.
 	{
