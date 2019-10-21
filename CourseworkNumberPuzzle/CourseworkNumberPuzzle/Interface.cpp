@@ -4,7 +4,7 @@
 
 Interface::Interface()
 {
-	Uname = "qwe";
+	Uname = " ";
 }
 
 

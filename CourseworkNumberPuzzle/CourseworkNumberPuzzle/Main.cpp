@@ -5,15 +5,15 @@
 #include "Main.h"
 #include "Interface.h"
 
-
+ int userValue = 10;
+ int nums[4][4];
 using namespace std;
+  
 
-int userValue = 10;
-int nums[4][4];
 
 void AddNumbersToArray()
 {
-	cout << "Please enter a number";    //Input from the user.
+	cout << "Please qenter a number";    //Input from the user.
 	cin >> userValue;
 
 }
