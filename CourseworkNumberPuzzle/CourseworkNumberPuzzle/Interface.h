@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -8,12 +9,13 @@ public:
 	Interface();
 
 	~Interface();
-
+	bool getChoice();
 
 	void out();
 
+
 private:
 	string Uname;
+	bool choice;
 
 };
-

@@ -1,6 +1,14 @@
 ﻿  Interface.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
   Main.cpp
-  CourseworkNumberPuzzle.vcxproj -> C:\Users\Admin\Desktop\GITHUB\15-Puzzle-Coursework\CourseworkNumberPuzzle\Debug\CourseworkNumberPuzzle.exe
-  CourseworkNumberPuzzle.vcxproj -> C:\Users\Admin\Desktop\GITHUB\15-Puzzle-Coursework\CourseworkNumberPuzzle\Debug\CourseworkNumberPuzzle.pdb (Partial PDB)
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(132,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(131): message : while compiling class template member function 'void Board<int>::CreateBoardInput(void)'
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Main.cpp(23): message : see reference to function template instantiation 'void Board<int>::CreateBoardInput(void)' being compiled
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Main.cpp(22): message : see reference to class template instantiation 'Board<int>' being compiled
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(62,38): warning C4018: '>': signed/unsigned mismatch
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(53): message : while compiling class template member function 'void Board<int>::VerifyFilename(void)'
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(40): message : see reference to function template instantiation 'void Board<int>::VerifyFilename(void)' being compiled
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Board.h(39): message : while compiling class template member function 'Board<int>::Board(void)'
+  Generating Code...
+C:\Users\Admin\Desktop\CourseworkNumberPuzzle\CourseworkNumberPuzzle\Main.cpp(22): message : see reference to function template instantiation 'Board<int>::Board(void)' being compiled
+  LINK : C:\Users\Admin\Desktop\CourseworkNumberPuzzle\Debug\CourseworkNumberPuzzle.exe not found or not built by the last incremental link; performing full link
+  CourseworkNumberPuzzle.vcxproj -> C:\Users\Admin\Desktop\CourseworkNumberPuzzle\Debug\CourseworkNumberPuzzle.exe

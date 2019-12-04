@@ -1,75 +1,95 @@
-//15 Puzzle game
-//By Aaron Robson
 #include <iostream>
 #include<string>
-#include "Main.h"
 #include "Interface.h"
+#include "Board.h"
 
- int userValue = 10;
- int nums[4][4];
+int main();
+void RestartProgram();
+
 using namespace std;
-  
-
-
-void AddNumbersToArray()
-{
-	cout << "Please qenter a number";    //Input from the user.
-	cin >> userValue;
-
-}
-
-void PrintArray()
-{
-	for (int column = 0; column < 4; column++)   //print out the column and row (their location)
-	{
-		for (int row = 0; row < 4; row++)
-		{
-			cout << nums[column][row] << " ";
-		}
-		cout << endl;
-	}
-
-}
-
-void IntroText()
-{
-	string title = "";
-
-	title =
-		"  @@@  @@@@@@@    @@@@@@@   @@@  @@@  @@@@@@@@  @@@@@@@@   @@@       @@@@@@@@      @@@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@@  \n"
-		" @@@@  @@@@@@@    @@@@@@@@  @@@  @@@  @@@@@@@@  @@@@@@@@   @@@       @@@@@@@@     @@@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  \n"
-		"@@@!!  !@@        @@!  @@@  @@!  @@@       @@!       @@!   @@!       @@!          !@@        @@!  @@@  @@! @@! @@!  @@!       \n"
-		"  !@!  !@!        !@!  @!@  !@!  @!@      !@!       !@!   !@!       !@!          !@!        !@!  @!@  !@! !@! !@!  !@!       \n"
-		"  @!@  !!@@!!     @!@@!@!   @!@  !@!     @!!       @!!    @!!       @!!!:!       !@! @!@!@  @!@!@!@!  @!! !!@ @!@  @!!!:!    \n"
-		"  !@!  @!!@!!!    !!@!!!    !@!  !!!    !!!       !!!     !!!       !!!!!:       !!! !!@!!  !!!@!!!!  !@!   ! !@!  !!!!!:    \n"
-		"  !!:      !:!    !!:       !!:  !!!   !!:       !!:      !!:       !!:          :!!   !!:  !!:  !!!  !!:     !!:  !!:       \n"
-		"  :!:      !:!    :!:       :!:  !:!  :!:       :!:        :!:      :!:          :!:   !::  :!:  !:!  :!:     :!:  :!:       \n"
-		"  :::  :::: ::     ::       ::::: ::   :: ::::   :: ::::   :: ::::   :: ::::      ::: ::::  ::   :::  :::     ::    :: ::::  \n";
-
-
-	cout << title << endl;
-}
-
 int main()
 {
 	Interface ui;
-	IntroText();
 	ui.out();
- 
-
-	for (int column = 0; column < 4; column++)     //Iterate from the column and then the row, setting the values.
+	if (ui.getChoice())
 	{
-		for (int row = 0; row < 4; row++)
+		string* temp = new string;
+
+		cout << "Would you like a user made board or a random one? u/r" << endl;
+		cin >> *temp;
+		if (*temp == "u")
 		{
-			AddNumbersToArray();
-			nums[column][row] = userValue;       //Sets the values of the user in these index of the array.
+			Board<int> puzzle;
+			puzzle.CreateBoardInput();
+			puzzle.PrintArray();
+			cin.get();
+			cin.get();
+			return 0;
+		}
+		else if (*temp == "r")
+		{
+			Board<int> puzzle;
+			puzzle.CreateMultipleBoards();
+			RestartProgram();
+			cin.get();
+			cin.get();
+			return 0;
 		}
 	}
+	else
+	{
+		int ComputersBoard[4][4]
+		{
+			1, 4, 5, 2,
+			3, 10, 6, 8,
+			9, 11, 12, 15,
+			22, 55, 23,
+		};
 
-	PrintArray();
+		for (int column = 0; column < 4; column++)
+		{
+			for (int row = 0; row < 4; row++)
+			{
+				cout << ComputersBoard[column][row] << " ";
 
 
+			}
+			cout << endl;
+
+		}
+
+	}
 	cin.get();
 	cin.get();
 	return 0;
+}
+
+void RestartProgram()
+{
+	char ans;
+	cout << "Would you like to run the program again? (y/n) ";
+	cin >> ans;
+
+	if (cin.fail())
+	{
+		cin.clear();
+		cout << "Sorry that wasn't an appropiate value" << endl;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		RestartProgram();
+	}
+	switch (ans)
+	{
+	case 'y':
+		main();
+		break;
+
+	case 'n':
+		cout << "Thanks for using me" << endl;
+		break;
+
+	default:
+		cout << "Sorry that wasn't a valid response" << endl;
+		RestartProgram();
+
+	}
 }
